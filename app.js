@@ -33,7 +33,7 @@ app.get("/", function(request, response){
 });
 
 app.get("/favicon.ico",function(req,res){
-    res.sendFile(__dirname + "/favicon.html");
+    res.sendFile(__dirname + "/favicon.ico");
 });
 
 app.get("/addfriends", function(request, response){
@@ -47,7 +47,5 @@ app.get("/searchfriends", function(request, response){
 });
 //----------------------------------------------------------------------------------------//
 
-http.listen((process.env.PORT || 3000), function(){
-    console.log('listening on *:3000');
-  });
+ app.listen(3000);
 
