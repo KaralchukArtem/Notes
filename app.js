@@ -28,19 +28,19 @@ const configDB = config.db;
 
 //----------------------------------------------------------------------------------------//
 
-// app.get("/", function(request, response){
-//     response.send("<h2>Привет Express!</h2>");
-// });
+app.get("/", function(request, response){
+    response.send("<h2>Привет Express!</h2>");
+});
 
-// app.get("/addfriends", function(request, response){
-//     response.send("<h2>Привет Express!</h2>");
-// });
-// app.get("/removefriends", function(request, response){
-//     response.send("<h2>Привет Express!</h2>");
-// });
-// app.get("/searchfriends", function(request, response){
-//     response.send("<h2>Привет Express!</h2>");
-// });
+app.get("/addfriends", function(request, response){
+    response.send("<h2>Привет Express!</h2>");
+});
+app.get("/removefriends", function(request, response){
+    response.send("<h2>Привет Express!</h2>");
+});
+app.get("/searchfriends", function(request, response){
+    response.send("<h2>Привет Express!</h2>");
+});
 //----------------------------------------------------------------------------------------//
 
  app.listen(3000);
