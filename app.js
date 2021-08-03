@@ -28,7 +28,7 @@ const configDB = config.db;
 
 //----------------------------------------------------------------------------------------//
 
-app.get("/", function(request, response){
+app.get("*", function(request, response){
     response.send("<h2>Привет Express!</h2>");
 });
 
