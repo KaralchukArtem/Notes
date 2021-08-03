@@ -28,7 +28,7 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.get("/",function(req,res){
+app.use("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
 
