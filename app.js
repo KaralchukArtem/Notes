@@ -3,9 +3,9 @@ const mongoose = require("mongoose");
 const config  = require("./conect/db");
 
 //-----------------------------Conection.js---------------------------------------------//
-const { FriendsSchema } = require('../notes_server/models/friends-model');
-const { NotesSchema } = require('../notes_server/models/notes-model');
-const { AccountSchema } = require('../notes_server/models/account-model');
+const { FriendsSchema } = require('./models/friends-model');
+const { NotesSchema } = require('./models/notes-model');
+const { AccountSchema } = require('./models/account-model');
 
 
 const MongoClient = require('mongodb').MongoClient;
