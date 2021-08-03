@@ -28,13 +28,14 @@ const configDB = config.db;
 
 //----------------------------------------------------------------------------------------//
 
-app.get("/", function(request, response){
-    response.send("<h2>Привет Express!</h2>");
+app.get("/",function(req,res){
+    res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/favicon.ico",function(req,res){
     res.sendFile(__dirname + "/favicon.ico");
 });
+
 
 app.get("/addfriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
