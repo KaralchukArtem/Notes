@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const config  = require("./conect/db");
+// const config  = require("./conect/db");
 
 //-----------------------------Conection.js---------------------------------------------//
 const { FriendsSchema } = require('./models/friends-model');
@@ -8,23 +8,23 @@ const { NotesSchema } = require('./models/notes-model');
 const { AccountSchema } = require('./models/account-model');
 
 
-const MongoClient = require('mongodb').MongoClient;
+// const MongoClient = require('mongodb').MongoClient;
 
-const Notes = mongoose.model('Notes', NotesSchema);
-const Friends = mongoose.model('Friends', FriendsSchema);
-const Account = mongoose.model('Account', AccountSchema);
+// const Notes = mongoose.model('Notes', NotesSchema);
+// const Friends = mongoose.model('Friends', FriendsSchema);
+// const Account = mongoose.model('Account', AccountSchema);
 
-exports.connect = function (callback) {
-    mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
-          console.log('callback');
-          callback(err, client);
-    })
-  }
+// exports.connect = function (callback) {
+//     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
+//           console.log('callback');
+//           callback(err, client);
+//     })
+//   }
 //----------------------------------------------------------------------------------------//
 
 
 const app = express();
-const configDB = config.db;
+// const configDB = config.db;
 
 //----------------------------------------------------------------------------------------//
 
