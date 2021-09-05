@@ -32,9 +32,9 @@ const app = express();
 
 app.use(IcoRoute);
 
-// app.use("/",function(req,res){
-//     res.sendFile(__dirname + "/index.html");
-// });
+app.use("/",function(req,res){
+    res.sendFile(__dirname + "/index.html");
+});
 
 
 app.get("/addfriends", function(request, response){
