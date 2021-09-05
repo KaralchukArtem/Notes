@@ -29,11 +29,10 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use("/", function(req,res){
-    console.log("index");
-    res.sendFile(__dirname + "/index.html");
-    next();
-});
+// app.use("/", function(req,res){
+//     console.log("index");
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 app.get("/favicon.ico", function(req,res){
     console.log("favicon");
@@ -46,10 +45,15 @@ app.get("/addfriends", function(request, response){
     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
         
         if(err) return console.log(err);
-        client.db.collection("friends").find({}).toArray((err, data) => {
-        console.log(err, data)
-        res.send({result:data});
-      });
+        client.Friends().find({}).toArray((err, data) => {
+            console.log(err, data)
+            res.send({result:data});
+        }
+    //     client.db.collection("friends").find({}).toArray((err, data) => {
+    //     console.log(err, data)
+    //     res.send({result:data});
+    //   }
+      );
 
         console.log('callback');
   })
