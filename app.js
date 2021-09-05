@@ -36,6 +36,9 @@ app.use("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
 
+app.get("/favicon.ico",function(req,res){
+    res.sendFile(__dirname + "/favicon.ico");
+});
 
 app.get("/addfriends", function(request, response){
     Friends.find({}, (err, friens) => {
