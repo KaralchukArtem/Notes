@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const config  = require("./conect/db");
-const IcoRoute = request("./routes/ico-route");
+const IcoRoute = require("./routes/ico-route");
 
 //-----------------------------Conection.js---------------------------------------------//
 const { FriendsSchema } = require('./models/friends-model');
@@ -30,26 +30,18 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-// app.use(IcoRoute);
+app.use(IcoRoute);
 
-app.use("/",function(req,res){
-    res.sendFile(__dirname + "/index.html");
+app.get("/addfriends", function(request, response){
+    Friends.find({}, (err, friens) => {
+        if (err) {
+          console.log(err);
+          res.send({ status: 'error', message: err.toString() })
+          return;
+        }
+        res.send({ status: 'ok', friens })
+      });
 });
-
-app.get("/favicon.ico",function(req,res){
-    res.sendFile(__dirname + "/favicon.ico");
-});
-
-// app.get("/addfriends", function(request, response){
-//     Friends.find({}, (err, friens) => {
-//         if (err) {
-//           console.log(err);
-//           res.send({ status: 'error', message: err.toString() })
-//           return;
-//         }
-//         res.send({ status: 'ok', friens })
-//       });
-// });
 app.get("/removefriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
 });
