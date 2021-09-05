@@ -5,7 +5,7 @@ const config  = require("./conect/db");
 //-----------------------------Conection.js---------------------------------------------//
 const { FriendsSchema } = require('./models/friends-model');
 const { NotesSchema } = require('./models/notes-model');
-const { AccountSchema } = require('./models/account-model');
+const { UsersSchema } = require('./models/account-model');
 
 
 const MongoClient = require('mongodb').MongoClient;
