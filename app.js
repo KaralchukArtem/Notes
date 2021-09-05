@@ -33,8 +33,14 @@ const app = express();
 app.use(IcoRoute);
 
 app.get("/addfriends", function(request, response){
-    console.log(err, data)
-    response.send({result: Account});
+    Account.find({}, (err, cinemas) => {
+        if (err) {
+          console.log(err);
+          res.send({ status: 'error', message: err.toString() })
+          return;
+        }
+        res.send({ status: 'ok', cinemas })
+      });
 //     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
         
 //         if(err) return console.log(err);
