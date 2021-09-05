@@ -13,7 +13,7 @@ const { request } = require("express");
 
 const Notes = mongoose.model('notes', NotesSchema);
 const Friends = mongoose.model('friends', FriendsSchema);
-const Users = mongoose.model('users', UsersSchema);
+// const Users = mongoose.model('users', UsersSchema);
 
 //...подключение к БД
 exports.connect = function (callback) {
