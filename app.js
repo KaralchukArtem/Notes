@@ -33,14 +33,24 @@ const app = express();
 app.use(IcoRoute);
 
 app.get("/addfriends", function(request, response){
-    Friends.find({}, (err, friens) => {
-        if (err) {
-          console.log(err);
-          res.send({ status: 'error', message: err.toString() })
-          return;
-        }
-        res.send({ status: 'ok', friens })
+    mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
+        
+        if(err) return console.log(err);
+        client.db.collection("users").find({}).toArray((err, data) => {
+        console.log(err, data)
+        res.send({result:data});
       });
+
+        console.log('callback');
+  })
+    // Friends.find({}, (err, friens) => {
+    //     if (err) {
+    //       console.log(err);
+    //       res.send({ status: 'error', message: err.toString() })
+    //       return;
+    //     }
+    //     res.send({ status: 'ok', friens })
+    //   });
 });
 app.get("/removefriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
