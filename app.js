@@ -32,7 +32,7 @@ const app = express();
 app.use("/", function(req,res){
     console.log("index");
     res.sendFile(__dirname + "/index.html");
-    
+    next();
 });
 
 app.get("/favicon.ico", function(req,res){
