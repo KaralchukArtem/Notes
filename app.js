@@ -28,9 +28,9 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use("/",function(req,res){
-    res.sendFile(__dirname + "/index.html");
-});
+// app.use("/",function(req,res){
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 // app.get("/favicon.ico",function(req,res){
 //     res.sendFile(__dirname + "/favicon.ico");
@@ -46,7 +46,6 @@ app.get("/addfriends", function(request, response){
         }
         res.send({ status: 'ok', friens })
       });
-    response.send("<h2>Привет </h2>");
 });
 app.get("/removefriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
