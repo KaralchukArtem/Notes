@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const config  = require("./conect/db");
-const IcoRoute = require("./routes/ico-route");
 
 //-----------------------------Conection.js---------------------------------------------//
 const { FriendsSchema } = require('./models/friends-model');
@@ -30,7 +29,13 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use(IcoRoute);
+app.use("/", function(req,res){
+    res.sendFile(__dirname + "/index.html");
+});
+
+app.get("/favicon.ico", function(req,res){
+    res.send(__dirname + "/favicon.ico");
+});
 
 app.get("/addfriends", function(request, response){
 
