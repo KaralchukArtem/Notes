@@ -29,9 +29,9 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use("/", function(req,res){
-    res.sendFile(__dirname + "/index.html");
-});
+// app.use("/", function(req,res){
+//     res.sendFile(__dirname + "/index.html");
+// });
 
 app.use("/favicon.ico", function(req,res){
     res.send(__dirname + "/favicon.ico");
