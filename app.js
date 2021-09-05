@@ -30,7 +30,7 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use(IcoRoute.router);
+app.use(IcoRoute);
 
 app.get("/addfriends", function(request, response){
     console.log(err, data)
