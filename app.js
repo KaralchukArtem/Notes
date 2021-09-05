@@ -30,7 +30,7 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use(IcoRoute);
+// app.use(IcoRoute);
 
 app.use("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
