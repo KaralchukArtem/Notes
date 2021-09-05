@@ -12,4 +12,4 @@ const UsersSchema = new mongoose.Schema({
     lower_admin_rights:Lower_Admin_RightsSchema
 })
 
-exports.AccountSchema = UsersSchema;
+exports.UsersSchema = UsersSchema;

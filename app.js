@@ -13,7 +13,7 @@ const { request } = require("express");
 
 const Notes = mongoose.model('notes', NotesSchema);
 const Friends = mongoose.model('friends', FriendsSchema);
-// const Users = mongoose.model('users', UsersSchema);
+const Users = mongoose.model('users', UsersSchema);
 
 //...подключение к БД
 exports.connect = function (callback) {
@@ -42,29 +42,25 @@ app.get("/favicon.ico", function(req,res){
 
 app.get("/addfriends", function(request, response){
     console.log("addfriends");
-    mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
+//     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
         
-        if(err) return console.log(err);
-        client.Friends({}).find({}).toArray((err, data) => {
-            console.log(err, data)
-            res.send({result:data});
-        }
-    //     client.db.collection("friends").find({}).toArray((err, data) => {
-    //     console.log(err, data)
-    //     res.send({result:data});
-    //   }
-      );
+//         if(err) return console.log(err);
+//         client.db.collection("friends").find({}).toArray((err, data) => {
+//         console.log(err, data)
+//         res.send({result:data});
+//       }
+//       );
 
-        console.log('callback');
-  })
-    // Friends.find({}, (err, friens) => {
-    //     if (err) {
-    //       console.log(err);
-    //       res.send({ status: 'error', message: err.toString() })
-    //       return;
-    //     }
-    //     res.send({ status: 'ok', friens })
-    //   });
+//         console.log('callback');
+//   })
+    Notes.find({}, (err, friens) => {
+        if (err) {
+          console.log(err);
+          response.send({ status: 'error', message: err.toString() })
+          return;
+        }
+        response.send({ status: 'ok', friens })
+      });
 });
 app.get("/removefriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
