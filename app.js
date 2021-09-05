@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const config  = require("./conect/db");
-const IcoRoute = request("./routes/ico-route")
+const IcoRoute = request("./routes/ico-route");
 
 //-----------------------------Conection.js---------------------------------------------//
 const { FriendsSchema } = require('./models/friends-model');
