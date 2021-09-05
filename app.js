@@ -30,7 +30,7 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-app.use(IcoRoute);
+app.use(IcoRoute.router);
 
 app.get("/addfriends", function(request, response){
     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
