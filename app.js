@@ -29,17 +29,18 @@ const app = express();
 
 //----------------------------------------------------------------------------------------//
 
-// app.use("/", function(req,res){
-//     res.sendFile(__dirname + "/index.html");
-
-// });
+app.use("/", function(req,res){
+    res.sendFile(__dirname + "/index.html");
+    console.log("favicon");
+});
 
 app.use("/favicon.ico", function(req,res){
     res.send(__dirname + "/favicon.ico");
+    console.log("favicon");
 });
 
 app.get("/addfriends", function(request, response){
-
+    console.log("addfriends");
     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
         
         if(err) return console.log(err);
