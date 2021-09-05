@@ -12,8 +12,8 @@ const MongoClient = require('mongodb').MongoClient;
 const { request } = require("express");
 
 const Notes = mongoose.model('notes', NotesSchema);
-const Friends = mongoose.model('Friends', FriendsSchema);
-const Users = mongoose.model('Users', UsersSchema);
+const Friends = mongoose.model('friends', FriendsSchema);
+const Users = mongoose.model('users', UsersSchema);
 
 //...подключение к БД
 exports.connect = function (callback) {
