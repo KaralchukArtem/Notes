@@ -30,13 +30,15 @@ const app = express();
 //----------------------------------------------------------------------------------------//
 
 app.use("/", function(req,res){
-    res.sendFile(__dirname + "/index.html");
     console.log("favicon");
+    res.sendFile(__dirname + "/index.html");
+    
 });
 
 app.use("/favicon.ico", function(req,res){
-    res.send(__dirname + "/favicon.ico");
     console.log("favicon");
+    res.send(__dirname + "/favicon.ico");
+    
 });
 
 app.get("/addfriends", function(request, response){
