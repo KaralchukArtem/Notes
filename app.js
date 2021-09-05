@@ -38,6 +38,14 @@ app.use("/",function(req,res){
 
 
 app.get("/addfriends", function(request, response){
+    Friends.find({}, (err, friens) => {
+        if (err) {
+          console.log(err);
+          res.send({ status: 'error', message: err.toString() })
+          return;
+        }
+        res.send({ status: 'ok', friens })
+      });
     response.send("<h2>Привет </h2>");
 });
 app.get("/removefriends", function(request, response){
