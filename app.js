@@ -30,12 +30,12 @@ const app = express();
 //----------------------------------------------------------------------------------------//
 
 app.use("/", function(req,res){
-    console.log("faviconaaa");
+    console.log("index");
     res.sendFile(__dirname + "/index.html");
     
 });
 
-app.use("/favicon.ico", function(req,res){
+app.get("/favicon.ico", function(req,res){
     console.log("favicon");
     res.send(__dirname + "/favicon.ico");
     
