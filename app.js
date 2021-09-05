@@ -14,6 +14,7 @@ const Notes = mongoose.model('Notes', NotesSchema);
 const Friends = mongoose.model('Friends', FriendsSchema);
 const Account = mongoose.model('Account', AccountSchema);
 
+//...подключение к БД
 exports.connect = function (callback) {
     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
           console.log('callback');
@@ -24,7 +25,6 @@ exports.connect = function (callback) {
 
 
 const app = express();
-const configDB = config.db;
 
 //----------------------------------------------------------------------------------------//
 
@@ -32,13 +32,13 @@ app.use("/",function(req,res){
     res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/favicon.ico",function(req,res){
-    res.sendFile(__dirname + "/favicon.ico");
-});
+// app.get("/favicon.ico",function(req,res){
+//     res.sendFile(__dirname + "/favicon.ico");
+// });
 
 
 app.get("/addfriends", function(request, response){
-    response.send("<h2>Привет Express!</h2>");
+    response.send("<h2>Привет </h2>");
 });
 app.get("/removefriends", function(request, response){
     response.send("<h2>Привет Express!</h2>");
@@ -49,5 +49,3 @@ app.get("/searchfriends", function(request, response){
 //----------------------------------------------------------------------------------------//
 
  app.listen(process.env.PORT || 5000);
-
- 
