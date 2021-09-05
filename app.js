@@ -45,7 +45,7 @@ app.get("/addfriends", function(request, response){
     mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true}, (err, client) => {
         
         if(err) return console.log(err);
-        client.Friends().find({}).toArray((err, data) => {
+        client.Friends({}).find({}).toArray((err, data) => {
             console.log(err, data)
             res.send({result:data});
         }
